@@ -3,14 +3,56 @@
   <head>
     <title>PaprikaApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+    <div class="header">
+      <div class="header-logo">
+       <%= link_to image_tag("img_logo.png"), "/" ,class:"link"%>
+      </div>
+          <div class="header-list">
+          <% if user_signed_in? %>
+              <ul>
+                <li>
+                    <div class="header-logout">
+                    <%= button_to "ログアウト", {controller: "devise/sessions", action: "destroy"}, {method: :delete, class: "button"} %>
+                    </div>
+                </li>
+          <% else %>
+                <li>
+                    <div class="heder-login">
+                    <%= button_to "ログイン" ,{controller: "devise/sessions", action: "create"}, {method: :get, class: "button"}%>
+                    </div>
+                </li>
+                <li>
+                    <div class="heder-create_new">
+                      <%= button_to "新規登録",{controller: "devise/sessions", action: "new"}, {method: :get, class: "button"}%>
+                    </div>
+                </li>
+              </ul>
+            
+          <% end %>
+          </div>
+    </div>
+
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <div class=current_user>
+    <%= session[:name] %>
+    </div>
+    
+    
+    <div class="action-bar">
+    </div>
     <%= yield %>
   </body>
 </html>

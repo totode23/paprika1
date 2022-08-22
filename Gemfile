@@ -40,6 +40,10 @@ gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 gem 'devise'
+gem 'omniauth-line'
+gem 'omniauth-rails_csrf_protection'
+gem 'dotenv-rails'
+gem 'omniauth', '~> 1.9.1'
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
