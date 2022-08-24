@@ -20,4 +20,5 @@ def line; basic_action end
     def fake_email(uid, provider)
       "#{auth.uid}-#{auth.provider}@example.com"
     end
+
 end

@@ -3,4 +3,5 @@ Rails.application.routes.draw do
     omniauth_callbacks: "omniauth_callbacks"
   }
   root 'homes#index' 
+  get "top" => "homes#top"
 end

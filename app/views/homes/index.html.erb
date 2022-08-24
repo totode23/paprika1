@@ -1,6 +1,21 @@
-<% @users.each do|user| %>
-          <%= user.uid  %>
-          <%= user.name %>
-          <%= user.provider  %>||||
+
+<% if user_signed_in? %>
+  ユーザー名:<%= current_user.name %><br>
+<% else %>
+  ログインしてください<br>
 <% end %>
-<%= session[:user_name] %>
+
+
+<div class="index-logo">
+  <h1 class="index-h1">食材の賞味期限を<br>
+  ブラウザーで管理。</h1>
+  <p class="index-p">ふと、忘れがちになってしまう食材、<br>
+  ブラウザーで管理してみませんか？</p>
+  <div class="button-i">
+    <% if user_signed_in? %>
+      <%= button_to "利用する",{controller: "homes", action: "top"}, {method: :get, class: "button-index"}%>
+    <% else %>
+      <%= button_to "利用する",{controller: "devise/registrations", action: "cancel"}, {method: :get, class: "button-index"}%>
+    <% end %>
+  </div>
+</div>

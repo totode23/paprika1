@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<!--<h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -24,6 +24,23 @@
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
-<% end %>
+<% end %>-->
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading">
+      <div class="heading-logo">
+      新規ユーザー登録画面
+      </div>
+    </div>
+      <%- if devise_mapping.omniauthable? %>
+        <%- resource_class.omniauth_providers.each do |provider| %>
+          <%= link_to image_tag("line-button-up.png") , omniauth_authorize_path(resource_name, provider), method: :post ,class:"line-button"%><br />
+        <% end %>
+      <% end %>
 
-<%= render "devise/shared/links" %>
+      <div class="account-not">既にアカウントをお持ちの方はこちらから</div>
+    
+    <%= link_to "ログイン", "sign_in" ,class: "new-url" %>
+
+  </div>
+</div>
