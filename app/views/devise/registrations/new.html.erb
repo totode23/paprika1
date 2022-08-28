@@ -32,15 +32,14 @@
       新規ユーザー登録画面
       </div>
     </div>
-      <%- if devise_mapping.omniauthable? %>
-        <%- resource_class.omniauth_providers.each do |provider| %>
-          <%= link_to image_tag("line-button-up.png") , omniauth_authorize_path(resource_name, provider), method: :post ,class:"line-button"%><br />
-        <% end %>
+    <%- if devise_mapping.omniauthable? %>
+      <%- resource_class.omniauth_providers.each do |provider| %>
+        <%= link_to image_tag("line-button-up.png") , omniauth_authorize_path(resource_name, provider), method: :post ,class:"line-button"%><br />
       <% end %>
+    <% end %>
 
-      <div class="account-not">既にアカウントをお持ちの方はこちらから</div>
+    <div class="account-not">既にアカウントをお持ちの方はこちらから</div>
     
     <%= link_to "ログイン", "sign_in" ,class: "new-url" %>
-
   </div>
 </div>

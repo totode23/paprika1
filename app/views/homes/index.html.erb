@@ -1,10 +1,10 @@
-
-<% if user_signed_in? %>
-  ユーザー名:<%= current_user.name %><br>
-<% else %>
-  ログインしてください<br>
-<% end %>
-
+<div class="current-user">
+  <% if user_signed_in? %>
+    ユーザー名:<%= current_user.name %><br>
+  <% else %>
+    ログインしてください<br>
+  <% end %>
+</div>
 
 <div class="index-logo">
   <h1 class="index-h1">食材の賞味期限を<br>
@@ -17,5 +17,6 @@
     <% else %>
       <%= button_to "利用する",{controller: "devise/registrations", action: "cancel"}, {method: :get, class: "button-index"}%>
     <% end %>
+    
   </div>
 </div>

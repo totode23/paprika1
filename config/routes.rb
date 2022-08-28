@@ -4,4 +4,9 @@ Rails.application.routes.draw do
   }
   root 'homes#index' 
   get "top" => "homes#top"
+  get "invitation" => "homes#invitation"
+  get "food" => "homes#food"
+  get "register" => "homes#register"
+  get "news" => "homes#news"
+  get "setting" => "homes#setting"
 end

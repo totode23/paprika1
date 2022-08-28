@@ -19,51 +19,71 @@
   }
 
 body {
-margin: 0;
-background-color: #FBFCE1;
-}  
+    margin: 0;
+    padding-top: 90px;
+    padding-bottom: 100px;
+    background-color: #FBFCE1;
+    }  
 
 
 li{
-font-size: 20px;
-list-style: none;
-float:left;
-padding-top: 20px;
-padding-right: 30px;
-padding-left: 30px;
+    font-size: 20px;
+    list-style: none;
+    float:left;
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
 }
 
 .header {
-background-color: #FDC450;
-height: 90px;
-margin: 0;
+    box-sizing: border-box;
+    position: fixed;
+    background-color: #FDC450;
+    width: 100%;
+    height: 90px;
+    margin: 0;
+    top: 0; 
+    left: 0;
 
 }
 
 .header-box{
-background-color: #FFF59C;
-border-radius: 10px;
-border: 3px solid #000000;
-padding: 5px;
+    background-color: #FFF59C;
+    border-radius: 10px;
+    border: 3px solid #000000;
+    padding: 5px;
 
 }
 
 .header-list{
-padding-left: 1100px;
+    padding-left: 1100px;
 }
 
+.flash{
+    position: fixed;
+    top:110px;
+    margin: 0;
+}
+.current-user{
+    position: fixed;
+    left: 0;
+    top: 90px;
+    margin: 0;
+}
+  
+
 .button{
-background-color: #FFF59C;
-border-radius: 10px;
-border: 3px solid #000000;
-padding: 5px;
-font-size: 20px;
-list-style: none;
-float:right;
+    background-color: #FFF59C;
+    border-radius: 10px;
+    border: 3px solid #000000;
+    padding: 5px;
+    font-size: 20px;
+    list-style: none;
+    float:right;
 }
 
 .button:hover{
-background-color: #f9c500;
+    background-color: #f9c500;
 }
 
 .button-index{
@@ -79,8 +99,48 @@ background-color: #f9c500;
     }
     
 .button-index:hover{
-background-color: #f9c500;
+    background-color: #f9c500;
 }
+
+.button-register,.button-invitation,.button-food,.button-setting{
+    background-color: #FFF59C;
+    border-radius: 30px;
+    border: 3px solid #000000;
+    padding: 5px;
+    margin-top: 10px;
+    margin-left: 4.5%;
+    margin-right: 4.5%;
+    font-size: 25px;
+    width: 150px;
+    height: 70px;
+    float:left;
+    }
+    
+.button-register:hover,.button-invitation:hover,.button-food:hover,.button-news:hover,.button-setting:hover{
+    background-color: #f9c500;
+    }
+
+.button-register img,.button-invitation img,.button-food img{
+    height: 60px;
+}
+
+.button-news{
+    background-color: #FFF59C;
+    border-radius: 30px;
+    border: 3px solid #000000;
+    padding: 5px;
+    margin-top: 10px;
+    margin-left: 4.5%;
+    margin-right: 4.5%;
+    font-size: 25px;
+    width: 150px;
+    height: 70px;
+    float:left;
+    }
+
+.button-setting img,.button-news img{
+    height: 55px;
+    }
 
 .index-h1{
     font-size: 50px;
@@ -101,6 +161,7 @@ background-color: #f9c500;
     background-image: url(logo.png);
     background-repeat: no-repeat;
     background-position: 47.5%;
+    margin-top:25px;
     background-size: contain;
 }
 
@@ -119,16 +180,18 @@ background-color: #f9c500;
 }
 
 .login_user{
-  padding: 0px;
-  padding-left: 20px;
+    padding: 0px;
+    padding-left: 20px;
 }
 
 footer{
     background-color: #FDC450;
-    width: 1440px;
+    left: 0;
+    width: 100%;
     height: 90px;
     margin-bottom: 0px;
     position: absolute;
+    position: fixed;
     bottom: 0px;
     border-top: 4px solid rgba(0,0,0,0.10);
 
@@ -136,15 +199,15 @@ footer{
 
 
 .form-heading{
-  background-color: #4690FF;
-  padding-top: 10px;
-  padding-bottom: 10px;
+    background-color: #4690FF;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .heading-logo{
-  padding-left: 130px;
-  color:aliceblue;
-  font-size: 50px;
+    padding-left: 130px;
+    color:aliceblue;
+    font-size: 50px;
 }
 
 .line-button{
@@ -192,5 +255,41 @@ footer{
     top :570px;
     left:650px;
     position: absolute;
+}
+
+.first-message-box {
+    background-color: white;
+    height: 100px;
+    width: 600px;
+    padding-top: 10px;
+    margin-top: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    border:5px solid;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+.first-button{
+    padding-left: 5px;
+}
+
+.first-message{
+    font-size: 29px;
+    padding: 20px;
+    margin:  auto;
+}
+
+.news-logo{
+    font-size:25px;
+    height:20px;
+    width:180px;
+    padding-top:30px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: 45.5%;
+    border-bottom:4px solid;
+    text-align:center;
 }
 

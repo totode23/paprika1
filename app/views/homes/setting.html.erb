@@ -1,0 +1,7 @@
+<div class="current-user">
+  <% if user_signed_in? %>
+    ユーザー名:<%= current_user.name %><br>
+  <% else %>
+    ログインしてください<br>
+  <% end %>
+</div>
