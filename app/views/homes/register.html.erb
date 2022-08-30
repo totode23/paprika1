@@ -6,22 +6,22 @@
   <% end %>
 </div>
 
-<%= form_tag("/create") do %>
+<%= form_with model: @food , local:true do |f| %>
   <div class="register-content">
-    <div class="img-content">
-      <%= image_tag "logo.png",width: "auto", height: "100%" %>
-    </div>
+      <!--<%= image_tag "logo.png",width: "auto", height: "100%" %>-->
+      <%= f.label :image ,"!",class:"image-content"%>
+      <%= f.file_field :image %>
 
     <div class="name-content">
-      <input type="text" placeholder="食材の名前" name="name">
+      <%= f.text_field :name ,placeholder: "食材名"%>
     </div>
 
     <div class="quantity-content">
-      個数: <input type="number" name="quantity">
+      個数: <%= f.number_field :quantity %>
     </div>
 
     <div class="expiry-content">
-      賞味期限: <input type="date" name="expiry_at">
+      賞味期限: <%= f.date_field :expiry_at %>
     </div>
     
     <div class="memo-content">
@@ -29,8 +29,7 @@
     </div>
 
     <div class="add-content">
-    <input type="submit" value="追  加">
+    <%= f.submit "追  加"%>
     </div>
-    
+    <% end %>
   </div>
-<% end %>

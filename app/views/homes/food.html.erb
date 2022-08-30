@@ -7,9 +7,20 @@
 </div>
 
 <% if @foods.present? %>
-  <div class="foods-index">
 
+  <div class="foods-index">
+    <div class="food-image">
+      <%= image_tag @foods.image , size: "180x110"%>
+    </div>
+    <%= check_box_tag %>
+    <div class="food-name">
+      <%= @foods.name %>
+    </div>
+    <div class="count-date">
+      あと<%=@foods.expiry_at - Date.today %>日
+    </div>
   </div>
+  
 <% else %>
   <div class="first-message-box">
     <div class="first-button">
