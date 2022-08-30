@@ -5,3 +5,32 @@
     ログインしてください<br>
   <% end %>
 </div>
+
+<%= form_tag("/create") do %>
+  <div class="register-content">
+    <div class="img-content">
+      <%= image_tag "logo.png",width: "auto", height: "100%" %>
+    </div>
+
+    <div class="name-content">
+      <input type="text" placeholder="食材の名前" name="name">
+    </div>
+
+    <div class="quantity-content">
+      個数: <input type="number" name="quantity">
+    </div>
+
+    <div class="expiry-content">
+      賞味期限: <input type="date" name="expiry_at">
+    </div>
+    
+    <div class="memo-content">
+      <textarea id="memo" name="memo" cols="40" rows="5" wrap="hard" placeholder="メモ"></textarea>
+    </div>
+
+    <div class="add-content">
+    <input type="submit" value="追  加">
+    </div>
+    
+  </div>
+<% end %>

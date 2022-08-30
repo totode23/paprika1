@@ -1,7 +1,14 @@
 <div class="current-user">
   <% if user_signed_in? %>
-    ユーザー名:<%= current_user.name %><br>
+    ユーザー名:<%= current_user.name%><br>
   <% else %>
     ログインしてください<br>
   <% end %>
+
+<% @users.each do |user| %>
+      
+<%= user.id %>
+        
+<% end %>
+
 </div>

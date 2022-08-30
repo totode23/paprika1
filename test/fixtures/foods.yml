@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  group_id: 1
+  name: MyString
+  quantity: 1
+  expiry_at: 2022-08-30
+  image: MyString
+  checked: false
+  memo: MyText
+
+two:
+  user_id: 1
+  group_id: 1
+  name: MyString
+  quantity: 1
+  expiry_at: 2022-08-30
+  image: MyString
+  checked: false
+  memo: MyText

@@ -6,11 +6,17 @@
   <% end %>
 </div>
 
-<div class="first-message-box">
-  <div class="first-button">
-    <%= button_to image_tag("register-icon.png"),{controller: "homes", action: "register"}, {method: :get, class: "button-register"}%>
+<% if @foods.present? %>
+  <div class="foods-index">
+
   </div>
-  <div class="first-message">
-    <p>から食材を登録しましょう</p>
+<% else %>
+  <div class="first-message-box">
+    <div class="first-button">
+      <%= button_to image_tag("register-icon.png"),{controller: "homes", action: "register"}, {method: :get, class: "button-register"}%>
+    </div>
+    <div class="first-message">
+      <p>から食材を登録しましょう</p>
+    </div>
   </div>
-</div>
+<% end %>
