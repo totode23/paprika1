@@ -7,29 +7,30 @@
 </div>
 
 
-<%= form_with url:"/create" , local:true do |f| %>
+<%= form_with url:"/edit/#{@food.id}/update" , local:true do |f| %>
   <div class="register-content">
       <!--<%= image_tag "logo.png",width: "auto", height: "100%" %>-->
-      
+      <%= f.label :image ,"!",class:"image-content"%>
+      <%= f.file_field :image %>
 
     <div class="name-content">
-      <%= f.text_field :name ,placeholder: "食材名"%>
+      <%= f.text_field :name ,value: @food.name %>
     </div>
 
     <div class="quantity-content">
-      個数: <%= f.number_field :quantity %>
+      個数: <%= f.number_field :quantity, value: @food.quantity %>
     </div>
 
     <div class="expiry-content">
-      賞味期限: <%= f.date_field :expiry_at %>
+      賞味期限: <%= f.date_field :expiry_at ,value: @food.expiry_at%>
     </div>
 
     <div class="memo-content">
-      <%= f.text_area :memo, class: "memo" ,cols:"40", rows:"5" ,wrap:"hard" ,placeholder:"メモ" %>
+      <%= f.text_area :memo, class:"memo" ,cols:"40", rows:"5" ,wrap:"hard" ,placeholder:"メモ" ,value: @food.memo %>
     </div>
 
     <div class="add-content">
-    <%= f.submit "追  加"%>
+    <%= f.submit "変  更"%>
     </div>
   </div>
 <% end %> 

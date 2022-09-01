@@ -21,7 +21,6 @@
 body {
     margin: 0;
     padding-top: 90px;
-    padding-bottom: 100px;
     background-color: #FBFCE1;
     }  
 
@@ -36,6 +35,7 @@ li{
 }
 
 .header {
+    z-index: 10;
     box-sizing: border-box;
     position: fixed;
     background-color: #FDC450;
@@ -45,7 +45,9 @@ li{
     top: 0; 
     left: 0;
 
+
 }
+
 
 .header-box{
     background-color: #FFF59C;
@@ -65,6 +67,7 @@ li{
     margin: 0;
 }
 .current-user{
+    z-index: 10;
     position: fixed;
     left: 0;
     top: 90px;
@@ -185,17 +188,22 @@ li{
 }
 
 footer{
+    overflow: hidden;
+    z-index:10;
     background-color: #FDC450;
     left: 0;
     width: 100%;
     height: 90px;
-    margin-bottom: 0px;
     position: absolute;
     position: fixed;
     bottom: 0px;
     border-top: 4px solid rgba(0,0,0,0.10);
 
 }
+
+
+
+
 
 
 .form-heading{
@@ -414,7 +422,7 @@ input[type="date"]{
 }
 
 
-#memo{
+.memo{
     font-size: 20px;
     margin-top: 25px;
     width: 380px;
@@ -441,4 +449,65 @@ input[type="submit"]{
 
 input[type="submit"]:hover{
     background-color: #f9c500;
+}
+
+.food-name{
+    font-size: 40px;
+}
+
+.foods-index{
+    position:  relative;
+    text-align:center;
+    height: 260px;
+    width: 250px;
+    font-size: 20px;
+    border:solid #000000;
+    margin-top: 50px;
+    margin-left: 6%;
+    margin-left: 6%;
+    margin-bottom: 90px;
+}
+
+.foods-index .a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width: 100%;
+}
+.food-image{
+    float:left;
+    background-color: white;
+    overflow: hidden;
+    height: 150px;
+    width: 243px;
+    border:4px solid #000000;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.count{
+    position:absolute;          
+    top: 130px;
+    left: 20px;
+    font-size: 15px;
+}
+
+
+input[type=checkbox] {
+	transform: scale(3);
+    position:absolute;          
+    top: 105px;
+    left: 219px;
+    size: 30px;
+}
+.food-name{
+    font-size: 15px;
+    margin: 0;
+}
+
+.expiry_at-count{
+font-size: 35px; 
+margin: 0;
 }
