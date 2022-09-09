@@ -10,18 +10,17 @@
 <%= form_with url:"/create" , local:true do |f| %>
   <div class="register-content">
       <!--<%= image_tag "logo.png",width: "auto", height: "100%" %>-->
-      
 
     <div class="name-content">
       <%= f.text_field :name ,placeholder: "食材名"%>
     </div>
 
     <div class="quantity-content">
-      個数: <%= f.number_field :quantity %>
+      個数: <%= f.number_field :quantity ,value: 1 %>
     </div>
 
     <div class="expiry-content">
-      賞味期限: <%= f.date_field :expiry_at %>
+      賞味期限: <%= f.date_field :expiry_at ,value: Date.today%>
     </div>
 
     <div class="memo-content">

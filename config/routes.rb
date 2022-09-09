@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   post "create" => "homes#create"
   get "news" => "homes#news"
   get "setting" => "homes#setting"
+
+  delete :homes, to: 'homes#destroy_all'
 end

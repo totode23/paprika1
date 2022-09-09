@@ -14,7 +14,7 @@ class HomesController < ApplicationController
   end
   
   def food
-    @foods = Food.all
+    @foods = Food.all.order(expiry_at: :asc)
   end
 
   def update
@@ -28,7 +28,7 @@ class HomesController < ApplicationController
   end
 
   def register
-    @foods = Food.new
+    @food = Food.new
   end
 
   def create
@@ -46,9 +46,18 @@ class HomesController < ApplicationController
     @users = User.all
   end
 
+  def destroy_all
+    checked_data = params[:deletes].keys
+    if Food.destroy(checked_data)
+      redirect_to ("/food")
+    else
+      render action: 'food'
+    end
+  end
+
   private
 def food_params
-  params.require(:food).permit(:name,:quantity,:expiry_at ,:memo).merge(user_id: current_user.id)
+  params.require(:food).permit(:name,:quantity,:expiry_at,:memo).merge(user_id: current_user.id)
 end
   
 
