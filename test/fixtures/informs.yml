@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  group_id: 1
+  news_title: MyText
+  news_message: MyText
+  inform: false
+  inform_date: 1
+  inform_time: 2022-09-18 13:35:42
+  green_date: 1
+  red_date: 1
+
+two:
+  group_id: 1
+  news_title: MyText
+  news_message: MyText
+  inform: false
+  inform_date: 1
+  inform_time: 2022-09-18 13:35:42
+  green_date: 1
+  red_date: 1

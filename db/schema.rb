@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_30_112236) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_05_112715) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,6 +51,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_112236) do
     t.string "image"
     t.boolean "checked", default: false, null: false
     t.text "memo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "informs", force: :cascade do |t|
+    t.integer "group_id", null: false
+    t.text "news_title"
+    t.text "news_message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.integer "user_id"
+    t.boolean "inform", default: true, null: false
+    t.integer "inform_date", default: 3, null: false
+    t.time "inform_time"
+    t.integer "green_date", default: 3, null: false
+    t.integer "red_date", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

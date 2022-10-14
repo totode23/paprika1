@@ -13,7 +13,7 @@
   ブラウザーで管理してみませんか？</p>
   <div class="button-i">
     <% if user_signed_in? %>
-      <%= button_to "利用する",{controller: "homes", action: "top"}, {method: :get, class: "button-index"}%>
+      <%= button_to "利用する",{controller: "foods", action: "index"}, {method: :get, class: "button-index"}%>
     <% else %>
       <%= button_to "利用する",{controller: "devise/registrations", action: "cancel"}, {method: :get, class: "button-index"}%>
     <% end %>

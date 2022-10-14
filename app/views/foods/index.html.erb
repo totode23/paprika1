@@ -1,0 +1,123 @@
+<div class="index">
+  <div class="current-user">
+    <% if user_signed_in? %>
+      ユーザー名:<%= current_user.name %><br>
+    <% else %>
+      ログインしてください<br>
+    <% end %>
+  </div>
+
+  <% if @foods.present? %> 
+    <%= form_tag({ controller: :foods, action: :destroy_all },method: 'delete') do %>
+      <% @foods.each do |food| %>
+          <div class="foods-index">
+            <%= link_to "","/foods/#{food.id}/edit",class: "a"%>
+              <% if 1 >= (food.expiry_at - Date.today).to_i%>
+
+                <% if food.photo.present? %>
+                  <div class="food-image-a">
+                    <%= image_tag food.photo,width: "auto", height: "100%" %>
+                  </div>
+                <% else %>
+                  <div class="food-image-a">
+                    <%= image_tag "index-image.png",width: "auto", height: "100%" %>
+                  </div>
+                <% end %>
+
+                <div class="count">
+                残り: <%= food.quantity %> 個<br>
+                </div>
+
+                <%= check_box_tag "deletes[#{ food.id }]",food.id,value:true %>
+
+                <div class="food-name">
+                  <%= food.name %><br>
+                </div>
+                <div class="expiry_at-count-a">
+                  あと<%=  (food.expiry_at - Date.today).to_i  %>日
+                </div>
+                <% if food.memo.present? %>
+                <div class="a-memo">
+                    メモあり
+                </div>
+                <% end %>
+
+              <%  elsif  3 >= (food.expiry_at - Date.today).to_i && 1 < (food.expiry_at - Date.today).to_i %>
+
+                <% if food.photo.present? %>
+                  <div class="food-image-b">
+                    <%= image_tag food.photo,width: "auto", height: "100%" %>
+                  </div>
+                <% else %>
+                  <div class="food-image-b">
+                    <%= image_tag "index-image.png",width: "auto", height: "100%" %>
+                  </div>
+                <% end %>
+
+                <div class="count">
+                残り: <%= food.quantity %> 個<br>
+                </div>
+
+                <%= check_box_tag "deletes[#{ food.id }]", food.id %>
+
+                <div class="food-name">
+                  <%= food.name %><br>
+                </div>
+                <div class="expiry_at-count-b">
+                  あと<%=  (food.expiry_at - Date.today).to_i  %>日
+                </div>
+                <% if food.memo.present? %>
+                  <div class="a-memo">
+                      メモあり
+                  </div>
+                <% end %>
+
+              <% else %>
+
+                <% if food.photo.present? %>
+                  <div class="food-image">
+                    <%= image_tag food.photo,width: "auto", height: "100%" %>
+                  </div>
+                <% else %>
+                  <div class="food-image">
+                    <%= image_tag "index-image.png",width: "auto", height: "100%" %>
+                  </div>
+                <% end %>
+
+                <div class="count">
+                残り: <%= food.quantity %> 個<br>
+                </div>
+
+                <%= check_box_tag "deletes[#{ food.id }]", food.id %>
+
+                <div class="food-name">
+                  <%= food.name %><br>
+                </div>
+                <div class="expiry_at-count">
+                  あと<%=  (food.expiry_at - Date.today).to_i  %>日
+                </div>
+                <% if food.memo.present? %>
+                <div class="a-memo">
+                    メモあり
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      <%= submit_tag '一括削除',class:"delete-submit"%>
+    <% end %>
+      
+  <% else %> 
+    <div class="first-message-box">
+      <div class="first-button">
+        <%= button_to image_tag("register-icon.png"),{controller: "foods", action: "new"}, {method: :get, class: "button-register"}%>
+      </div>
+      <div class="first-message">
+        <p>から食材を登録しましょう</p>
+      </div>
+    </div>
+  <% end %> 
+
+  <div class="i">
+  </div>
+</div>

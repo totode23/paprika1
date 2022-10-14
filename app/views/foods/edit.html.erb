@@ -7,11 +7,11 @@
 </div>
 
 
-<%= form_with url:"/edit/#{@food.id}/update" , local:true do |f| %>
+<%= form_with model: @food, local:true do |f| %>
   <div class="register-content">
-      <!--<%= image_tag "logo.png",width: "auto", height: "100%" %>-->
-      <%= f.label :image ,"!",class:"image-content"%>
-      <%= f.file_field :image %>
+      <%= f.label :photo ,"!",class:"image-content" %>
+      <%= f.file_field :photo %>
+      <%= image_tag @food.photo,class: "image-content-a",width: "auto", height: "100%" if @food.photo.attached? %>
 
     <div class="name-content">
       <%= f.text_field :name ,value: @food.name %>

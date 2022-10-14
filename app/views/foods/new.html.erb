@@ -6,11 +6,10 @@
   <% end %>
 </div>
 
-
-<%= form_with url:"/create" , local:true do |f| %>
+<%= form_with model: @food, local:true do |f| %>
   <div class="register-content">
-      <!--<%= image_tag "logo.png",width: "auto", height: "100%" %>-->
-
+      <%= f.label :photo ,"!",class:"image-content"%>
+      <%= f.file_field :photo %>
     <div class="name-content">
       <%= f.text_field :name ,placeholder: "食材名"%>
     </div>
