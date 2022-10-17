@@ -1,24 +1,23 @@
 class SettingsController < ApplicationController
-  def index
-    @settings = Setting.all
-    @users = User.all
+  def new
+    @setting = Setting.new
   end
 
   def create
     @setting = Setting.new(setting_params)
-    if @fsetting.save
-      redirect_to("/setting")
+    if @setting.save!
+      redirect_to edit_setting_path
     else
-      render action: "index"
+      render action: "new"
     end
   end
 
   def update
     @setting = Setting.update(id: params[:id])
     if @setting.update(setting_params)
-     redirect_to("/setting")
+     redirect_to edit_setting_path
     else
-    render action: "index"
+    render action: "edit"
     end
   end
 
@@ -27,5 +26,4 @@ class SettingsController < ApplicationController
     def setting_params
       params.require(:setting).permit(:inform,:inform_date,:inform_time,:red_date,:green_date).merge(user_id: current_user.id)
     end
-
 end

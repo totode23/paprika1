@@ -5,17 +5,20 @@
     ログインしてください<br>
   <% end %>
 </div>
-
 <div class="news-logo">
-  設　定
+        新規設定
 </div>
-<%= form_with model: @settubgs, local:true do |f| %>
+<%= form_with model: @setting, local:true do |f| %>
   <div class="setting-content">
     <div class="name-content">
     </div>
 
     <div class="inform-setting">
-      通知　:　　　　　　　　<%= label_tag :inform, "する" %><%= label_tag :inform, "しない" %><br>
+      通知　:　　　　
+      <%= f.radio_button :inform, checked: true %><%= label_tag :inform, "する" %>
+      　
+      <%= f.radio_button :inform, checked: false %><%= label_tag :inform, "しない" %>
+      <br>
     </div>
 
     <div class="inform-date-setting">

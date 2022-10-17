@@ -1,7 +1,7 @@
 class FoodsController < ApplicationController
       def index
         if current_user.settings.blank?
-          redirect_to settings_index_path
+          redirect_to new_setting_path
         end
         
         @foods = Food.all.order(expiry_at: :asc)

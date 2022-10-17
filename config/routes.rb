@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'settings/index'
   resources :comments
   devise_for :users, controllers: {
     omniauth_callbacks: "omniauth_callbacks"
