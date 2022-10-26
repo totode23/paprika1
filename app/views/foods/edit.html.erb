@@ -11,7 +11,7 @@
   <div class="register-content">
       <%= f.label :photo ,"!",class:"image-content" %>
       <%= f.file_field :photo %>
-      <%= image_tag @food.photo,class: "image-content-a",width: "auto", height: "100%" if @food.photo.attached? %>
+      <%# <%= image_tag @food.photo,class: "image-content-a",width: "auto", height: "100%" if @food.photo.attached? %> 
 
     <div class="name-content">
       <%= f.text_field :name ,value: @food.name %>

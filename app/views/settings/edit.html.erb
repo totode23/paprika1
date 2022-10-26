@@ -14,27 +14,27 @@
     </div>
 
     <div class="inform-setting">
-      通知　:　　　　
+      通知　
       <%= f.radio_button :inform, checked: true %><%= label_tag :inform, "する" %>
-      　
+      
       <%= f.radio_button :inform, checked: false %><%= label_tag :inform, "しない" %>
       <br>
     </div>
 
     <div class="inform-date-setting">
-      通知を送る日　:　　 <%= f.number_field :inform_date %>日前<br>
+      通知を送る日　<%= f.number_field :inform_date %>日前<br>
     </div>
 
     <div class="inform-time-setting">
-      通知を送る時間　: 　　　　<%= f.time_field :inform_time %><br>
+      通知を送る時間　<%= f.time_field :inform_time %><br>
     </div>
 
     <div class="red-date-setting">
-      赤色　:　　　　　　<%= f.number_field :red_date %>日前<br>
+      お知らせ色（赤）　<%= f.number_field :red_date %>日前<br>
     </div>
 
     <div class="green-date-setting">
-      緑色　:　　　　　　 <%= f.number_field :green_date %>日前<br>
+      お知らせ色（緑）　<%= f.number_field :green_date %>日前<br>
     </div>
 
     <div class="add-content">

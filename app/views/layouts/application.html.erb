@@ -60,7 +60,11 @@
           <%= button_to image_tag("food-icon.png"),{controller: "foods", action: "index"}, {method: :get, class: "button-food"}%>
           <%= button_to image_tag("register-icon.png"),{controller: "foods", action: "new"}, {method: :get, class: "button-register"}%>
           <%= button_to image_tag("news-icon.png"),{controller: "homes", action: "news"}, {method: :get, class: "button-news"}%>
-          <%= button_to image_tag("setting-icon.png"),{controller: "settings", action: "new"}, {method: :get, class: "button-setting"}%>
+          <% if current_user.setting.blank? %>
+            <%= button_to image_tag("setting-icon.png"),{controller: "settings", action: "new"}, {method: :get, class: "button-setting"}%>
+          <% else %>
+            <%= button_to image_tag("setting-icon.png"),"/settings/#{current_user.setting.id}/edit", {method: :get, class: "button-setting"}%>
+          <% end %>
         </div>
       </footer>
       <% end %>

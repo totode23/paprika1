@@ -12,8 +12,12 @@ class SettingsController < ApplicationController
     end
   end
 
+  def edit
+    @setting = Setting.find_by(id: params[:id])
+  end
+
   def update
-    @setting = Setting.update(id: params[:id])
+    @setting = Setting.find_by(id: params[:id])
     if @setting.update(setting_params)
      redirect_to edit_setting_path
     else

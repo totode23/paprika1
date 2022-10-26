@@ -1,10 +1,9 @@
 class FoodsController < ApplicationController
       def index
-        if current_user.settings.blank?
+        if current_user.setting.blank?
           redirect_to new_setting_path
         end
-        
-        @foods = Food.all.order(expiry_at: :asc)
+        @foods = Food.where(user_id: current_user.id)
       end
 
       def new

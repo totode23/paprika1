@@ -12,7 +12,7 @@
       <% @foods.each do |food| %>
           <div class="foods-index">
             <%= link_to "","/foods/#{food.id}/edit",class: "a"%>
-              <% if 1 >= (food.expiry_at - Date.today).to_i%>
+              <% if food.user.setting.red_date >= (food.expiry_at - Date.today).to_i%>
 
                 <% if food.photo.present? %>
                   <div class="food-image-a">
@@ -42,7 +42,7 @@
                 </div>
                 <% end %>
 
-              <%  elsif  3 >= (food.expiry_at - Date.today).to_i && 1 < (food.expiry_at - Date.today).to_i %>
+              <%  elsif  food.user.setting.green_date >= (food.expiry_at - Date.today).to_i && food.user.setting.red_date < (food.expiry_at - Date.today).to_i %>
 
                 <% if food.photo.present? %>
                   <div class="food-image-b">
