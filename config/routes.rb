@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   root 'homes#index'
   resources :homes
   resources :foods
+  resources :informs
   resources :settings
+  
 
   get "news" => "homes#news"
 

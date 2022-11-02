@@ -56,7 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_05_112715) do
   end
 
   create_table "informs", force: :cascade do |t|
-    t.integer "group_id", null: false
+    t.integer "user_id", null: false
     t.text "news_title"
     t.text "news_message"
     t.datetime "created_at", null: false
