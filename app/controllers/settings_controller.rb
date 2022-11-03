@@ -6,7 +6,7 @@ class SettingsController < ApplicationController
   def create
     @setting = Setting.new(setting_params)
     if @setting.save!
-      redirect_to edit_setting_path
+      redirect_to("/foods")
     else
       render action: "new"
     end
