@@ -1,4 +1,4 @@
 class Inform < ApplicationRecord
-    belongs_to :user
-    validates :user_id, presence: true
+    belongs_to :food
+    validates :food_id, presence: true
 end
