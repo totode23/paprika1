@@ -1,4 +1,7 @@
 class FoodsController < ApplicationController
+      before_action :authenticate_user
+      
+    
       def index
         if current_user.setting.blank?
           redirect_to new_setting_path

@@ -1,4 +1,15 @@
 class SettingsController < ApplicationController
+  before_action :authenticate_user
+  before_action :ensure_correct_setting,{only: [:edit]}
+  
+  def ensure_correct_setting
+    if current_user.id != params[:id].to_i
+      redirect_to("/")
+    end
+
+  end
+
+
   def new
     @setting = Setting.new
   end
