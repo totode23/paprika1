@@ -9,3 +9,17 @@
 <div class="news-logo">
   お知らせ
 </div>
+
+<% @informs.each do |i| %>
+  <div class="inform-content">
+    <div class="inform-title">
+      <%= i.news_title%><br>
+    </div>
+    <div class="inform-massage">
+      <%= i.news_message%><br>
+    </div>
+    <div class="inform-date">
+      <%= i.created_at.strftime('%Y/%m/%d') %>
+    </div>
+  </div>
+<% end %>

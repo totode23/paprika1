@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
  * {
     margin: 0px;
     padding: 0px;
@@ -665,3 +666,133 @@ input[type="submit"].delete-submit{
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
+
+.inform-content{
+    background-color: white;
+    padding: 10px 50px;
+    border: solid 3px #000000;
+    margin: 2% 20% 1% 20%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.inform-title{
+    text-align: left;
+    border-bottom: 2px solid;
+    margin-bottom: 1%;
+}
+
+.inform-massage{
+    font-size:100%;
+}
+
+.inform-date{
+    text-align: right;
+    font-size:10%;
+}
+
+
+@media screen and (max-width: 700px) {
+    .header {
+        z-index: 10;
+        box-sizing: border-box;
+        position: fixed;
+        background-color: #FDC450;
+        width: 100%;
+        height: 90px;
+        margin: 0;
+        top: 0;
+        left: 0;
+    }
+
+    .button {
+        background-color: #FFF59C;
+        border-radius: 10px;
+        border: 3px solid #000000;
+        padding: 5px;
+        font-size: 20px;
+        list-style: none;
+        float: right;
+    }
+
+    .button-food, .button-setting {
+        background-color: #FFF59C;
+        border-radius: 30px;
+        border: 3px solid #000000;
+        padding: 5px;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 25px;
+        width: 120px;
+        height: 70px;
+        float: left;
+    }
+
+    .button-news {
+        background-color: #FFF59C;
+        border-radius: 30px;
+        border: 3px solid #000000;
+        padding: 5px;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 25px;
+        width: 120px;
+        height: 70px;
+        float: left;
+    }
+
+    .button-register, .button-food, .button-setting {
+        background-color: #FFF59C;
+        border-radius: 30px;
+        border: 3px solid #000000;
+        padding: 5px;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 25px;
+        width: 120px;
+        height: 70px;
+        float: left;
+    }
+    
+    .index-h1 {
+        font-size: 30px;
+        top: 250px;
+        left: 20%;
+        position: absolute;
+    }
+    .index-p {
+        font-size: 15px;
+        top: 350px;
+        left: 20%;
+        position: absolute;
+    }
+
+    .button-index {
+        background-color: #FFF59C;
+        border-radius: 10px;
+        border: 3px solid #000000;
+        padding: 5px;
+        font-size: 20px;
+        top: 400px;
+        left: 39%;
+        position: absolute;
+    }
+
+    input[type="submit"].delete-submit {
+        position: absolute;
+        font-size: 20px;
+        height: 30px;
+        width: 180px;
+        top: 1%;
+        left: auto;
+        border: solid #000000;
+    }
+    
+    
+    
+  }

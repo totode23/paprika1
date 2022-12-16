@@ -1,20 +1,7 @@
-namespace :push_food do
-    desc "賞味期限の通知" 
-    task :push_line_message_food => :environment do
-        client = Line::Bot::Client.new { |config|
-            config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
-            config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
-        }
+namespace :food_inform do
+    desc "賞味期限の通知(お知らせ画面用)" 
+    task inform_message_food: :environment do 
 
-        # limit_foods = Food.where("expiry_at < ?", Date.today - Setting.find_by(user_id: ).inform_date.days)
-        # limit_foods.each do |t|
-        #     message = {
-        #         type: 'text',
-        #         text: "「#{t.name}」の賞味期限が切れています。"
-        #     }
-        #     response = client.push_message(t.user.uid, message)
-        #     p response
-        # end
         users = User.all
         users.each do |u|
             limit_foods = []
@@ -28,9 +15,9 @@ namespace :push_food do
                 text: "#{limit_foods.to_s.gsub("[", "").gsub("]", "")}の賞味期限が切れています。"
             }
             if limit_foods.count >= 1
-            response = client.push_message(u.uid, message)
+                inform = Inform.new(news_title: "賞味期限が切れている食材があります。", news_message: message[:text], user_id: u.id)
+                inform.save
             end
-            p response
         end
 
         users = User.all
@@ -46,9 +33,9 @@ namespace :push_food do
                 text: "#{limit_foods.to_s.gsub("[", "").gsub("]", "")}の賞味期限が切れそうです。"
             }
             if limit_foods.count >= 1
-            response = client.push_message(u.uid, message)
+                inform = Inform.new(news_title: "賞味期限が近づいている食材があります。" ,news_message: message[:text] ,user_id: u.id)
+                inform.save
             end
-            p response
         end
     end
 end

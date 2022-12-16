@@ -39,6 +39,6 @@ class SettingsController < ApplicationController
 
   private
     def setting_params
-      params.require(:setting).permit(:inform,:inform_date,:inform_time,:red_date,:green_date).merge(user_id: current_user.id)
+      params.require(:setting).permit(:inform_date,:red_date,:green_date).merge(user_id: current_user.id)
     end
 end
