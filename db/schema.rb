@@ -67,7 +67,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_05_112715) do
     t.integer "user_id"
     t.boolean "inform", default: true, null: false
     t.integer "inform_date", default: 3, null: false
-    t.time "inform_time"
     t.integer "green_date", default: 3, null: false
     t.integer "red_date", default: 1, null: false
     t.datetime "created_at", null: false

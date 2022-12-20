@@ -8,9 +8,6 @@ Rails.application.routes.draw do
   resources :foods
   resources :informs
   resources :settings
-  
-
-  get "news" => "homes#news"
 
   delete :foods, to: 'foods#destroy_all'
 end

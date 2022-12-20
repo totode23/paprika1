@@ -19,7 +19,7 @@ namespace :push_food do
         users.each do |u|
             limit_foods = []
             u.foods.each do |f|
-                if (f.expiry_at - Date.today).to_i < 0
+                if (f.expiry_at - Date.today).to_i < 0  &&  u.setting.inform
                     limit_foods << f.name
                 end
             end
@@ -37,7 +37,7 @@ namespace :push_food do
         users.each do |u|
             limit_foods = []
             u.foods.each do |f|
-                if (f.expiry_at - Date.today).to_i <= u.setting.inform_date && (f.expiry_at - Date.today).to_i >= 0
+                if (f.expiry_at - Date.today).to_i <= u.setting.inform_date && (f.expiry_at - Date.today).to_i >= 0 &&  u.setting.inform
                     limit_foods << f.name
                 end
             end

@@ -1,7 +1,7 @@
 class SettingsController < ApplicationController
   before_action :authenticate_user
   before_action :ensure_correct_setting,{only: [:edit]}
-  
+
   def ensure_correct_setting
     if current_user.id != params[:id].to_i
       redirect_to("/")
@@ -36,9 +36,8 @@ class SettingsController < ApplicationController
     end
   end
 
-
-  private
+ private
     def setting_params
-      params.require(:setting).permit(:inform_date,:red_date,:green_date).merge(user_id: current_user.id)
+      params.require(:setting).permit(:inform,:inform_date,:red_date,:green_date).merge(user_id: current_user.id)
     end
 end
