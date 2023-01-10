@@ -59,13 +59,7 @@
         <div class="action-bar">
           <%= button_to image_tag("food-icon.png"),{controller: "foods", action: "index"}, {method: :get, class: "button-food"}%>
           <%= button_to image_tag("register-icon.png"),{controller: "foods", action: "new"}, {method: :get, class: "button-register"}%>
-          
-          <% if current_user.setting.blank? %>
-            <%= button_to image_tag("news-icon.png"),{controller: "informs", action: "index"}, {method: :get, class: "button-news"}%>
-          <% else %>
-            <%= button_to image_tag("news-icon.png"),"/settings/#{current_user.setting.id}/edit", {method: :get, class: "button-news"}%>
-          <% end %>
-
+          <%= button_to image_tag("news-icon.png"),{controller: "informs", action: "index"}, {method: :get, class: "button-news"}%>
           <% if current_user.setting.blank? %>
             <%= button_to image_tag("setting-icon.png"),{controller: "settings", action: "new"}, {method: :get, class: "button-setting"}%>
           <% else %>
