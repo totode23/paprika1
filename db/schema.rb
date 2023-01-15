@@ -59,6 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_05_112715) do
     t.integer "user_id", null: false
     t.text "news_title"
     t.text "news_message"
+    t.boolean "checked", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
